@@ -1659,13 +1659,25 @@ input, select, textarea {
 			display: flex; /* Flexbox para centrar */
 			justify-content: center; /* Centrar horizontalmente */
 			align-items: center; /* Centrar verticalmente */
-			height: 100px; /* Ajusta según tu diseño */
+			height: 100px; /* Altura fija del contenedor */
 			background-color: #f5f5f5; /* Opcional: fondo para visualizar */
 		}
-		.logo img {
-			max-width: 100%; /* Asegura que el logo no se desborde */
-			height: auto;
+		
+		.logo a {
+			display: flex; /* Asegura que el enlace también use Flexbox */
+			justify-content: center; /* Centra el contenido horizontalmente */
+			align-items: center; /* Centra el contenido verticalmente */
+			text-decoration: none; /* Elimina el subrayado */
 		}
+		
+		.logo img {
+			max-height: 50px; /* Tamaño máximo del logo */
+			height: auto; /* Mantén proporciones */
+			width: auto; /* Mantén proporciones */
+			display: block; /* Asegura que la imagen no tenga espacio extra alrededor */
+		}
+		
+		
 		#videoModal {
 			display: none;
 			position: fixed;

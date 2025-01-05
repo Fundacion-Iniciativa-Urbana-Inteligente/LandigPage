@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": ".", // Usar la carpeta raíz
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+
