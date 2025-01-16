@@ -53,6 +53,7 @@
 			box-shadow: none;
 		}
 	</style>
+	
 </head>
 
 <body class="is-preload">
@@ -198,31 +199,31 @@
 			<!-- Contact -->
 			<article id="contact">
 				<h2 class="major">Contacto</h2>
-				<form method="post" action="#">
+				<form id="contact-form">
 					<div class="fields">
-						<div class="field half">
-							<label for="name">Nombre</label>
-							<input type="text" name="name" id="name" />
-						</div>
-						<div class="field half">
-							<label for="email">Email</label>
-							<input type="text" name="email" id="email" />
-						</div>
-						<div class="field">
-							<label for="message">Mensaje</label>
-							<textarea name="message" id="message" rows="4"></textarea>
-						</div>
+					  <div class="field half">
+						<label for="name">Nombre</label>
+						<input type="text" id="name" required />
+					  </div>
+					  <div class="field half">
+						<label for="email">Email</label>
+						<input type="email" id="email" required />
+					  </div>
+					  <div class="field">
+						<label for="message">Mensaje</label>
+						<textarea id="message" rows="4" required></textarea>
+					  </div>
 					</div>
 					<ul class="actions">
-						<li><input type="submit" value="Send Message" class="primary" /></li>
-						<li><input type="reset" value="Reset" /></li>
+					  <li><button type="button" class="primary" id="send-message">Send Message</button></li>
+					  <li><input type="reset" value="Reset" /></li>
 					</ul>
-				</form>
+				  </form>
 				<ul class="icons">
 					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="https://www.instagram.com/jinete.ar/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			
 				</ul>
 			</article>
 
@@ -253,13 +254,13 @@
 					<h4>Preformatted</h4>
 					<pre><code>i = 0;
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
+						while (!deck.isInOrder()) {
+						print 'Iteration ' + i;
+						deck.shuffle();
+						i++;
+						}
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+					print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				</section>
 
 				<section>
@@ -494,7 +495,47 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<!-- EmailJS Script -->
+	<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script>
+  // Inicializar EmailJS
+  (function () {
+    emailjs.init("3U-ARLxRqjq07Fzm-"); // Public Key
+  })();
 
+  document.getElementById("send-message").addEventListener("click", function () {
+    // Capturar datos del formulario
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Validar datos básicos
+    if (!name || !email || !message) {
+      alert("Por favor, completa todos los campos.");
+      return;
+    }
+
+    // Enviar correo con EmailJS
+    emailjs
+      .send("service_20t6dit", "template_e1izi3a", {
+        from_name: name,
+        from_email: email,
+        to_email: "info@jinete.ar",
+        message: message,
+      })
+      .then(
+        function (response) {
+          alert("Mensaje enviado correctamente. ¡Gracias por contactarnos!");
+          document.getElementById("contact-form").reset(); // Limpia el formulario
+        },
+        function (error) {
+          alert("Hubo un error al enviar el mensaje: " + error.text);
+        }
+      );
+  });
+</script>
 </body>
 
 </html>
