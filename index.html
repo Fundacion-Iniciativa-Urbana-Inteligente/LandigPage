@@ -147,21 +147,27 @@
 			<article id="work">
 				<h2 class="major">PROTOTIPO</h2>
 				<!--  -->
-				<model-viewer src="/model/bike2.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"auto-rotate camera-controls
-				style="width: 100%; height: 500px;">
-					<button class="Hotspot" slot="hotspot-1" data-position="-60.055830582056615m 63.4504264849723m -6.906432727192534m" data-normal="-0.7381525499638425m 0.4876722876620466m -0.4661615093809688m" data-visibility-attribute="visible">
-						<div class="HotspotAnnotation">Candado Inteligente</div>
-					</button><button class="Hotspot" slot="hotspot-2" data-position="53.868796490450535m 49.27501669754968m -26.809504239927822m" data-normal="0.03403524552196172m -0.021766100293204402m -0.9991835862044002m" data-visibility-attribute="visible">
-						<div class="HotspotAnnotation">Cubierta maciza</div>
-					</button><button class="Hotspot" slot="hotspot-3" data-position="-51.17031495285286m 70.86754861841374m -10.034575585585413m" data-normal="0.6790999132708334m 0.3694991273138645m 0.6342662711431527m" data-visibility-attribute="visible">
-						<div class="HotspotAnnotation">Eslinga</div>
-					</button><button class="Hotspot" slot="hotspot-4" data-position="22.95917592115066m 68.30679901395231m -18.54402422610879m" data-normal="-0.12344850243681099m 0.9702705189665379m -0.2081720136582097m" data-visibility-attribute="visible">
-						<div class="HotspotAnnotation">Canasto con panel solar</div>
+				<model-viewer src="model/bici_optimizada.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="525.6deg 87.53deg 3.95m" field-of-view="30deg" auto-rotate camera-target="0m 0.5831m 0m" style="width: 100%; height: 500px;">
+					<button class="Hotspot" slot="hotspot-1" data-position="0.6006157798326377m 0.7042470243186616m -0.1981896990308408m" data-normal="-0.3640591546622445m 0.15176652918721312m -0.9189275556457533m" data-visibility-attribute="visible">
+						<div class="HotspotAnnotation">PANEL SOLAR</div>
+					</button><button class="Hotspot" slot="hotspot-2" data-position="-0.8628651060988148m 0.28472208798779003m 0.024659523224396296m" data-normal="-0.015455399263526338m -0.17653832863720081m -0.984172418408273m" data-visibility-attribute="visible">
+						<div class="HotspotAnnotation">CUBIERTA MACIZA</div>
+					</button><button class="Hotspot" slot="hotspot-3" data-position="-0.3407688204631788m 0.6105882389550501m -0.03205595542730265m" data-normal="0.5047181256936023m 0.5017948412687857m -0.7024681849538605m" data-visibility-attribute="visible">
+						<div class="HotspotAnnotation">CANDADO INTELIGENTE</div>
+					</button><button class="Hotspot" slot="hotspot-5" data-position="-0.25742123490987795m 0.7148680002829989m -0.0014566715444270031m" data-normal="-0.048482636813494205m 0.8191877994199411m 0.5714724693361224m" data-visibility-attribute="visible">
+						<div class="HotspotAnnotation">ESLINGA</div>
 					</button>
 					<div class="progress-bar hide" slot="progress-bar">
 						<div class="update-bar"></div>
 					</div>
+					<button slot="ar-button" id="ar-button">
+						View in your space
+					</button>
 				</model-viewer>
+				
+				
+				
+				
 				
 				<p>El prototipo de bicicleta inteligente de Jinete.ar combina tecnología avanzada y sostenibilidad.
 					Equipada con GNSS para rastreo en tiempo real, IoT (LTE Cat M1/NB-IoT) para comunicación eficiente y
@@ -201,7 +207,7 @@
 				<h2 class="major">Dona tu vieja Bicicleta</h2>
 				<h2></h2>
 				<model-viewer
-				src="model/old_bicycle.glb" 
+				src="model/bikeold.glb" 
 				alt="Nosotros la hacemos inteligente"
 				ar
 				ar-modes="scene-viewer webxr"
